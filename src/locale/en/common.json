@@ -1,0 +1,107 @@
+{
+  "HOME": "Home",
+  "ACCOUNT": "Account",
+  "ACCOUNT_SIGNUP": "Sign up",
+  "ACCOUNT_SIGNIN": "Sign in",
+  "JOIN_US": "Join the community",
+  "ACCOUNT_FORGET_PASSWORD": "Forgot Password",
+  "ADMINISTRATION": "Administration",
+  "USER": "User",
+  "INFORMATION": "Information",
+  "SEARCH": "Search",
+  "SEARCH...": "Search...",
+  "SUBMIT": "Submit",
+  "SIGNIN": "Sign in",
+  "PROFILE": "Profile",
+  "LOGOUT": "Logout",
+  "LOGOUT_LABEL": "Please confirm logout.",
+  "CLOSE": "Close",
+  "NO": "No",
+  "YES": "Yes",
+  "PRIVATE": "Private",
+  "COPY_BUTTON": "Copy",
+  "TEXT_COPY": "Text copied!",
+  "NO_RESULT": "No result",
+  "NO_CLICK": "No click",
+  "ACTIVE": "Active",
+  "DASHBOARD": "Dashboard",
+  "ASTUCE": "Tip",
+  "BUY": "Buy",
+  "YOU": "You",
+  "MESSAGE": "Message",
+  "UPDATE": "Update",
+  "VALIDATE": "Validate",
+  "REFUSE": "Refuse",
+  "SHORT": "Short",
+  "MEDIUM": "Medium",
+  "LONG": "Long",
+  "UPLOAD": "Upload",
+  "DOWNLOAD": "Download",
+  "IMPORT": "Import",
+  "NOTIFICATION": "Notification",
+  "READ_ALL": "Read all",
+  "READ_ALL_CONFIRM": "Do you want to mark all unread notifications as read?",
+  "FAQ_DESCRIPTION": "is a SAAS that allows you to create customizable chatbots and share them. <br/> Below, you will find answers to frequently asked questions.",
+  "ORDER": {
+    "TITLE": "Order",
+    "DATE": "Date",
+    "NB_CLICK": "Number of clicks"
+  },
+  "FIELDS": {
+    "ID": "Identifier"
+  },
+  "CONTACT_ME": "To contact me, please write to the following email address:",
+  "BACK_TO_HOME": "Back to home page",
+  "NOT_FOUND_PAGE": "404 Page",
+  "NOT_FOUND_PAGE_DESCRIPTION": "The page was not found, it is under construction or absent from the site.",
+  "CREATION_OK": "Creation successful",
+  "UPDATE_OK": "Update successful",
+  "DELETE_OK": "Deletion successful",
+  "FORM": {
+    "CREATE": "Create",
+    "UPDATE": "Update",
+    "ERROR": "Error in the form"
+  },
+  "CONFIRMATION": {
+    "TITLE": "Alert",
+    "MESSAGE": "Confirm action?"
+  },
+  "GO_TO": "Go to page",
+  "COOKIE": {
+    "TITLE": "This website uses cookies",
+    "DESC": "<strong>ownyourchatbots.com</strong> uses cookies to improve your experience.",
+    "BUTTON": {
+      "ALLOW": "Allow all",
+      "REJECT": "Reject all"
+    }
+  },
+  "CONTACT": {
+    "TITLE": "Contact",
+    "LOGIN": "vagabond",
+    "DESCRIPTION": "passionate about Web technologies",
+    "DESCRIPTION2": "20 years of experience",
+    "CONTACT_ME": "Contact Me",
+    "WRITE_TO_ME": "To contact me, please write to the following email address:",
+    "FOLLOW_ME": "Follow Me",
+    "DISCORD_BUTTON": "Join my Discord server",
+    "BLOG_BUTTON": "Follow my blog",
+    "GITHUB_BUTTON": "Follow me on GitHub",
+    "X_BUTTON": "Follow me on X",
+    "PROJECTS": {
+      "BLOG": {
+        "TITLE": "Blog & Tools",
+        "DESCRIPTION": "My blog with the list of tools I use to create my SaaS.",
+        "DESCRIPTION2": "Also contains a todo list management to share with other members."
+      },
+      "OYC": {
+        "TITLE": "OwnYourChatbots",
+        "DESCRIPTION": "Creation and training of Chatbots with integration via iFrame or Discord bot.",
+        "DESCRIPTION2": "Several models available: ChatGpt, Mistral, and Llama."
+      },
+      "L4R": {
+        "TITLE": "links4rewards",
+        "DESCRIPTION": "Creation of unique links by Content Creators, with community click tracking and rewards."
+      }
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "HOME": "Accueil",
+  "ACCOUNT": "Compte",
+  "ACCOUNT_SIGNUP": "Créer un compte",
+  "ACCOUNT_SIGNIN": "Se connecter",
+  "JOIN_US": "Rejoindre la communauté",
+  "ACCOUNT_FORGET_PASSWORD": "Mot de passe oublié",
+  "ADMINISTRATION": "Administration",
+  "USER": "Utilisateur",
+  "INFORMATION": "Information",
+  "SEARCH": "Rechercher",
+  "SEARCH...": "Rechercher...",
+  "SUBMIT": "Valider",
+  "SIGNIN": "Se connecter",
+  "PROFILE": "Profil",
+  "LOGOUT": "Se déconnecter",
+  "LOGOUT_LABEL": "Veuillez confirmer la déconnexion.",
+  "CLOSE": "Fermer",
+  "NO": "Non",
+  "YES": "Oui",
+  "PRIVATE": "Privé",
+  "COPY_BUTTON": "Copier",
+  "TEXT_COPY": "Le texte a été copié !",
+  "NO_RESULT": "Pas de résultat",
+  "NO_CLICK": "Pas de clic",
+  "ACTIVE": "Actif",
+  "DASHBOARD": "Tableau de bord",
+  "ASTUCE": "Astuce",
+  "BUY": "Acheter",
+  "YOU": "Vous",
+  "MESSAGE": "Message",
+  "UPDATE": "Modifier",
+  "VALIDATE": "Valider",
+  "REFUSE": "Refuser",
+  "SHORT": "Court",
+  "MEDIUM": "Moyen",
+  "LONG": "Long",
+  "UPLOAD": "Upload",
+  "DOWNLOAD": "Télécharger",
+  "IMPORT": "Importer",
+  "NOTIFICATION": "Notification",
+  "READ_ALL": "Tout lire",
+  "READ_ALL_CONFIRM": "Souhaitez-vous cocher toutes les notifications non lues ?",
+  "FAQ_DESCRIPTION": "est un SAAS qui permet de créer des chatbots personnalisables et de les partager. <br/> Ci-dessous, vous trouverez des réponses aux questions fréquentes.",
+  "ORDER": {
+    "TITLE": "Tri",
+    "DATE": "Date",
+    "NB_CLICK": "Nb de clics"
+  },
+  "FIELDS": {
+    "ID": "Identifiant"
+  },
+  "CONTACT_ME": "Pour me contacter, veuillez écrire à l'adresse mail suivante :",
+  "BACK_TO_HOME": "Retour à la page d'accueil",
+  "NOT_FOUND_PAGE": "Page 404",
+  "NOT_FOUND_PAGE_DESCRIPTION": "La page n'a pas été trouvée, elle est en construction ou absente du site.",
+  "CREATION_OK": "Création réussie",
+  "UPDATE_OK": "Modification réussie",
+  "DELETE_OK": "Suppression réussie",
+  "FORM": {
+    "CREATE": "Création d'un ",
+    "UPDATE": "Modification d'un ",
+    "ERROR": "Erreur dans le formulaire"
+  },
+  "CONFIRMATION": {
+    "TITLE": "Alerte",
+    "MESSAGE": "Confirmer l'action ?"
+  },
+  "GO_TO": "Aller à la page",
+  "COOKIE": {
+    "TITLE": "Ce site web utilise des cookies",
+    "DESC": "<strong>ownyourchatbots.com</strong> utilise des cookies pour améliorer votre expérience.",
+    "BUTTON": {
+      "ALLOW": "Accepter tout",
+      "REJECT": "Rejeter tout"
+    }
+  },
+  "CONTACT": {
+    "TITLE": "Contact",
+    "LOGIN": "vagabond",
+    "DESCRIPTION": "passionné par les technologies du Web",
+    "DESCRIPTION2": "20 ans d'expérience",
+    "CONTACT_ME": "Me contacter",
+    "WRITE_TO_ME": "Pour me contacter, veuillez écrire à l'adresse mail suivante :",
+    "FOLLOW_ME": "Me suivre",
+    "DISCORD_BUTTON": "Rejoindre mon serveur Discord",
+    "BLOG_BUTTON": "Suivre mon blog",
+    "GITHUB_BUTTON": "Me suivre sur GitHub",
+    "X_BUTTON": "Me suivre sur X",
+    "PROJECTS": {
+      "BLOG": {
+        "TITLE": "Blog & Tools",
+        "DESCRIPTION": "Mon blog avec la liste des outils que j'utilise pour créé mes SaaS.",
+        "DESCRIPTION2": "Contient également une gestion des todo list à partager avec d'autre membre."
+      },
+      "OYC": {
+        "TITLE": "OwnYourChatbots",
+        "DESCRIPTION": "Création et entrainement de Chatbot avec une intégration par iFrame ou bot Discord.",
+        "DESCRIPTION2": "Plusieurs modèles disponibles: ChatGpt, Mistral et Llama."
+      },
+      "L4R": {
+        "TITLE": "links4rewards",
+        "DESCRIPTION": "Création de liens unique par les Créateurs de contenus, avec suivis des clics de la communauté et des récompenses à la clé."
+      }
+    }
+  }
+}
