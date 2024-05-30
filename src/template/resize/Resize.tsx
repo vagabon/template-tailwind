@@ -1,6 +1,6 @@
-import { useWindowSize } from "hook/useWindowSize";
 import { memo, useEffect } from "react";
 import { useResize } from "./hook/useResize";
+import { useWindowSize } from "./hook/useWindowSize";
 import { LARGE } from "./store/useResizeStore";
 
 export interface IResizeProps {}
