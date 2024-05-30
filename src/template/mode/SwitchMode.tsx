@@ -3,13 +3,15 @@ import { Button } from "../../ds/button/Button";
 import Svg from "../../icon/svg/Svg";
 import { useMode } from "./hook/useMode";
 
-export interface IModeProps {}
+export interface IModeProps {
+  className?: string;
+}
 
-export const SwitchMode: React.FC<IModeProps> = memo(() => {
+export const SwitchMode: React.FC<IModeProps> = memo(({ className }) => {
   const { mode, switchMode } = useMode();
 
   return (
-    <Button type="icon" callback={switchMode(mode)}>
+    <Button type="icon" callback={switchMode(mode)} className={className}>
       <Svg
         className={mode === "dark" ? "hidden" : ""}
         d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"

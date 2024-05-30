@@ -45,7 +45,7 @@ export const DropDown: React.FC<IDropDownProps> = memo(
 
         <div
           className={clsx(
-            "right-1 z-10 mt-2 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-slate-900 dark:text-white",
+            "right-0 z-10 mt-3 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-slate-900 dark:text-white",
             isRelative ? "absolute" : "fixed",
             !open && "opacity-0 transition delay-150",
             open && "opacity-1 transition delay-150"
@@ -58,7 +58,7 @@ export const DropDown: React.FC<IDropDownProps> = memo(
             {Object.entries(content).map(([key, value]) => (
               <div
                 key={key}
-                className="flex justify-center hover:bg-slate-100 dark:hover:bg-slate-700"
+                className="flex justify-center hover:bg-slate-100 p-1.5 dark:hover:bg-slate-700"
               >
                 {value}
               </div>
