@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Link } from "../../ds/link/Link";
+import { Link } from "../../../ds/link/Link";
 
 export const HeaderTitle: React.FC = memo(() => {
   return (

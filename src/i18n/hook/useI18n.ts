@@ -8,16 +8,19 @@ export const useI18n = () => {
   const language = useI18nStore(useShallow((state) => state.language));
   const setLanguage = useI18nStore((state) => state.setLanguage);
 
-  const initLanguage = useCallback((language: string) => {
-    i18n?.changeLanguage(language);
-  }, []);
+  const initLanguage = useCallback(
+    (language: string) => {
+      i18n?.changeLanguage(language);
+    },
+    [i18n]
+  );
 
   const handleChangeLanguage = useCallback(
     (event: ChangeEvent<HTMLSelectElement>) => {
       const newLanguage = event.target.value;
       setLanguage(newLanguage);
     },
-    [i18n]
+    [setLanguage]
   );
 
   const translate = useCallback(

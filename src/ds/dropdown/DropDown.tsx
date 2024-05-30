@@ -1,14 +1,28 @@
 import clsx from "clsx";
-import React, { memo, useCallback, useState } from "react";
+import React, { memo, useCallback, useEffect, useState } from "react";
+import { useClickOutside } from "../../hook/useClickoutside";
+import { Button } from "../button/Button";
 
 export interface IDropDownProps {
-  isRelative?: boolean;
+  className?: string;
+  left?: boolean;
   content: { [x: string]: React.JSX.Element };
 }
 
 export const DropDown: React.FC<IDropDownProps> = memo(
-  ({ isRelative = true, content }) => {
+  ({ left = false, className, content }) => {
     const [open, setOpen] = useState(false);
+    const [drawerClassName, setDrawerClassName] = useState("");
+
+    useEffect(() => {
+      if (!open) {
+        setTimeout(() => {
+          setDrawerClassName("hidden");
+        }, 150);
+      } else {
+        setDrawerClassName("");
+      }
+    }, [open]);
 
     const handleOpen = useCallback(
       (open: boolean) => () => {
@@ -17,19 +31,14 @@ export const DropDown: React.FC<IDropDownProps> = memo(
       []
     );
 
+    const { ref } = useClickOutside(open, handleOpen(true));
+
     return (
-      <div className={clsx("inline-block text-left", isRelative && "relative")}>
+      <div className={clsx("relative inline-block text-left")} ref={ref}>
         <div>
-          <button
-            type="button"
-            className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-            id="menu-button"
-            aria-expanded="true"
-            aria-haspopup="true"
-            onClick={handleOpen(open)}
-          >
+          <Button type="icon" callback={handleOpen(open)}>
             <svg
-              className="-mr-1 h-5 w-5 text-gray-400"
+              className="h-5 w-5 text-gray-400"
               viewBox="0 0 20 20"
               fill="currentColor"
               aria-hidden="true"
@@ -40,15 +49,17 @@ export const DropDown: React.FC<IDropDownProps> = memo(
                 clipRule="evenodd"
               />
             </svg>
-          </button>
+          </Button>
         </div>
 
         <div
           className={clsx(
-            "right-0 z-10 mt-3 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-slate-900 dark:text-white",
-            isRelative ? "absolute" : "fixed",
+            "absolute z-10 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-slate-900 dark:text-white",
             !open && "opacity-0 transition delay-150",
-            open && "opacity-1 transition delay-150"
+            open && "opacity-1 transition delay-150",
+            left ? "left-0" : "right-0",
+            className ?? "mt-1 ",
+            drawerClassName
           )}
           role="menu"
           aria-orientation="vertical"
@@ -58,7 +69,7 @@ export const DropDown: React.FC<IDropDownProps> = memo(
             {Object.entries(content).map(([key, value]) => (
               <div
                 key={key}
-                className="flex justify-center hover:bg-slate-100 p-1.5 dark:hover:bg-slate-700"
+                className="flex justify-center hover:bg-slate-100 p-1.5 dark:hover:bg-slate-700 text-base"
               >
                 {value}
               </div>
