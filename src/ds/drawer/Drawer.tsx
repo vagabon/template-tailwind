@@ -1,6 +1,12 @@
 import clsx from "clsx";
 import { useClickOutside } from "hook/useClickoutside";
-import React, { PropsWithChildren, useEffect, useMemo, useState } from "react";
+import React, {
+  PropsWithChildren,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 export interface IDrawerProps extends PropsWithChildren {
   force?: boolean;
@@ -20,14 +26,16 @@ export const Drawer: React.FC<IDrawerProps> = ({
     "menu-button"
   );
   const [drawerClassName, setDrawerClassName] = useState("");
+  const timeout = useRef<number | null>(null);
 
   const mainClassName = useMemo(() => {
     return force ? "max-w-xs" : "";
   }, [force]);
 
   useEffect(() => {
+    timeout.current && clearTimeout(timeout.current);
     if (!isOpen) {
-      setTimeout(() => {
+      timeout.current = setTimeout(() => {
         setDrawerClassName("");
       }, 500);
     } else {
@@ -38,9 +46,9 @@ export const Drawer: React.FC<IDrawerProps> = ({
   return (
     <main
       className={clsx(
-        "overflow-hidden z-10 bg-gray-900 bg-opacity-25 inset-0 transform ease-in-out",
+        "overflow-hidden z-10 bg-gray-900 bg-opacity-50 inset-0 transform ease-in-out",
         isOpen
-          ? " transition-c opacity-100 duration-500 "
+          ? " transition opacity-100 duration-500 "
           : " transition-left delay-500 opacity-0",
         drawerClassName,
         mainClassName
@@ -49,7 +57,7 @@ export const Drawer: React.FC<IDrawerProps> = ({
       <section
         ref={ref}
         className={
-          "w-screen max-w-xs absolute bg-white dark:bg-slate-900 h-full shadow-xl delay-400 duration-500 ease-in-out transition-left transform border-r-2 dark:border-r-1 " +
+          "w-screen max-w-xs absolute bg-white dark:bg-slate-900 h-full shadow-xl delay-400 duration-500 ease-in-out transition-left transform " +
           (isOpen ? "left-0" : "-left-80")
         }
       >

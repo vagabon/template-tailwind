@@ -1,15 +1,16 @@
 import Header from "./template/header/Header";
 
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import { SwitchLanguage } from "./i18n/component/SwitchLanguage";
 import { useI18n } from "./i18n/hook/useI18n";
 import { SwitchMode } from "./template/mode/SwitchMode";
 
+import { ADrawer } from "template/ADrawer";
 import { HeaderDrawer } from "template/header/component/HeaderDrawer";
 import { Resize } from "template/resize/Resize";
 import { useResize } from "template/resize/hook/useResize";
-import { DropDown } from "./ds/dropdown/DropDown";
+
 import "./i18n/i18n";
 
 function App() {
@@ -17,10 +18,6 @@ function App() {
   const { large } = useResize();
 
   useEffect(() => initLanguage(language), [language, initLanguage]);
-
-  const test = useCallback(() => {
-    return { id: <>Test</> };
-  }, []);
 
   return (
     <section className="flex flex-col min-h-screen h-screen">
@@ -36,7 +33,7 @@ function App() {
             <div className="mx-auto max-w-screen-lg px-3">
               <SwitchMode />
               <SwitchLanguage />
-              <DropDown content={test()} left={true} />
+              <ADrawer />
               <h1 className="text-3xl font-bold underline ">
                 Hello world! Hello world! Hello world! Hello world! Hello world!
                 Hello world! Hello world! Hello world! Hello world! Hello world!

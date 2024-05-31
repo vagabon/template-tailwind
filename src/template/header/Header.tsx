@@ -12,15 +12,15 @@ const Header: React.FC<IHeaderProps> = memo(() => {
   const { large } = useResize();
 
   return (
-    <header className="sticky top-0 z-50 ">
+    <header className="sticky top-0 z-50 bg-white dark:bg-gray-800">
       <nav
         className={clsx(
-          "shadow-sm bg-white border-gray-200 px-0 lg:px-6 py-0 dark:bg-gray-800",
+          "shadow-md border-gray-200 px-0 lg:px-6 py-0 dark:shadow-slate-900",
           large && "ml-80"
         )}
       >
         <div className="flex justify-between items-center mx-auto max-w-screen-lg whitespace-nowrap">
-          <div className="flex items-center truncate">
+          <div className="flex items-center pl-1 m-2 gap-2 truncate">
             <HeaderDrawerButton />
             <HeaderTitle />
           </div>

@@ -10,11 +10,10 @@ import { Translate } from "../../i18n/component/Translate";
 import { useRouterContext } from "../../router/context/RouterContext";
 
 const switchType = (type?: string) => {
-  let className =
-    "focus:ring-2 font-medium rounded-lg text-sm px-4 lg:px-5 py-1.5 lg:py-2.5";
+  let className = "focus:ring-2 font-medium rounded-lg text-sm px-4 py-1.5 ";
   if (type === "icon") {
     className =
-      "inline-flex items-center p-1 m-1 text-sm rounded-lg focus:outline-none focus:ring-2";
+      "inline-flex items-center px-2 py-1.5 text-sm rounded-lg focus:outline-none focus:ring-2";
   }
   return className;
 };
