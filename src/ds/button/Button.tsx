@@ -6,6 +6,7 @@ import React, {
   useCallback,
   useMemo,
 } from "react";
+import { NavigateFunction } from "react-router-dom";
 import { Translate } from "../../i18n/component/Translate";
 import { useRouterContext } from "../../router/context/RouterContext";
 
@@ -24,7 +25,7 @@ export interface IButtonProps extends PropsWithChildren {
   text?: string;
   type?: string;
   className?: string;
-  callback?: () => void;
+  callback?: (event: MouseEvent<HTMLAnchorElement>) => void;
 }
 
 export const Button: React.FC<IButtonProps> = memo(
@@ -41,16 +42,21 @@ export const Button: React.FC<IButtonProps> = memo(
     const buttonClass = useMemo(() => switchType(type), [type]);
 
     const handleClick = useCallback(
-      (event: MouseEvent<HTMLAnchorElement>) => {
-        event.stopPropagation();
-        event.preventDefault();
-        if (url) {
-          navigate?.(url);
-        } else {
-          callback?.();
-        }
-      },
-      [url, navigate, callback]
+      (
+          url?: string,
+          navigate?: NavigateFunction,
+          callback?: (event: MouseEvent<HTMLAnchorElement>) => void
+        ) =>
+        (event: MouseEvent<HTMLAnchorElement>) => {
+          event.stopPropagation();
+          event.preventDefault();
+          if (url) {
+            navigate?.(url);
+          } else {
+            callback?.(event);
+          }
+        },
+      []
     );
 
     return (
@@ -63,7 +69,7 @@ export const Button: React.FC<IButtonProps> = memo(
           "text-" + type,
           "flex items-center gap-2"
         )}
-        onClick={handleClick}
+        onClick={handleClick(url, navigate, callback)}
       >
         {icon}
         {text && (

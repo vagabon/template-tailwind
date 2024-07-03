@@ -2,15 +2,16 @@ import Header from "./template/header/Header";
 
 import { useEffect } from "react";
 import "./App.css";
-import { SwitchLanguage } from "./i18n/component/SwitchLanguage";
 import { useI18n } from "./i18n/hook/useI18n";
-import { SwitchMode } from "./template/mode/SwitchMode";
 
-import { ADrawer } from "template/ADrawer";
 import { HeaderDrawer } from "template/header/component/HeaderDrawer";
 import { Resize } from "template/resize/Resize";
 import { useResize } from "template/resize/hook/useResize";
 
+import { AppConf } from "conf/AppConf";
+import { AuthRouter } from "module/auth/AuthRouter";
+import HomePage from "module/home/HomePage";
+import { Route, Routes } from "react-router-dom";
 import "./i18n/i18n";
 
 function App() {
@@ -30,36 +31,19 @@ function App() {
           <HeaderDrawer />
           {large && <div className="min-w-80">&nbsp;</div>}
           <div className="flex-1 ">
-            <div className="mx-auto max-w-screen-lg px-3">
-              <SwitchMode />
-              <SwitchLanguage />
-              <ADrawer />
-              <h1 className="text-3xl font-bold underline ">
-                Hello world! Hello world! Hello world! Hello world! Hello world!
-                Hello world! Hello world! Hello world! Hello world! Hello world!
-                Hello world! Hello world! Hello world! Hello world! Hello world!
-                Hello world! Hello world! Hello world! Hello world! Hello world!
-                Hello world! Hello world! Hello world! Hello world! Hello world!
-                Hello world! Hello world! Hello world! Hello world! Hello world!
-                Hello world! Hello world! Hello world! Hello world! Hello world!
-                Hello world! Hello world! Hello world! Hello world! Hello world!
-                Hello world! Hello world! Hello world! Hello world! Hello world!
-                Hello world! Hello world! Hello world! Hello world! Hello world!
-                Hello world! Hello world! Hello world! Hello world! Hello world!
-                Hello world! Hello world! Hello world! Hello world! Hello world!
-                Hello world! Hello world! Hello world! Hello world! Hello world!
-                Hello world! Hello world! Hello world! Hello world! Hello world!
-                Hello world! Hello world! Hello world! Hello world! Hello world!
-                Hello world! Hello world! Hello world! Hello world! Hello world!
-                Hello world! Hello world! Hello world! Hello world! Hello world!
-                Hello world! Hello world! Hello world! Hello world! Hello world!
-                Hello world! Hello world! Hello world! Hello world! Hello world!
-                Hello world! Hello world! Hello world! Hello world! Hello world!
-                Hello world! Hello world! Hello world! Hello world! Hello world!
-                Hello world! Hello world! Hello world! Hello world!
-              </h1>
-              test
-            </div>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route
+                path="/auth/*"
+                element={
+                  <AuthRouter
+                    googleClientId={AppConf.GOOGLE_CLIENT_ID as string}
+                    facebookClientId={AppConf.FACEBOOK_CLIENT_ID as string}
+                    googleCaptchaId={AppConf.GOOGLE_CAPTCHA_ID as string}
+                  />
+                }
+              />
+            </Routes>
           </div>
         </section>
         <Resize />
